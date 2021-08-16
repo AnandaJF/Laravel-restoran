@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: black;
+}
+.logo h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 50px;
+    color: darkred;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 0;
+    background-color: black;
+    align-items: center;
+    height: 70px;
+    font-size: 0.8em;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+nav ul li a:hover {
+    color: darkred;
+}
+li a {
+    display: block;
+    text-decoration: none;
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    background-color: black;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -6px;
+    top: -5px;
+    cursor: pointer;
+}
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0;
+}
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 0;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-0.1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: blanchedalmond;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 576px) {
+    nav {
+        position: relative;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        transform: translateX(100%);
+        transition: all 1s;
+        z-index: -0;
+        display: grid;
+    }
+    nav ul.slide {
+        transform: translateX(0);
+    }
+}
+.footer {
+    background-color: black;
+}
+.footer p {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

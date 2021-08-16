@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: black;
+}
+.logo h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 50px;
+    color: darkred;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 0px 0;
+    background-color: black;
+    align-items: center;
+    height: 70px;
+    font-size: 0.8em;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between;
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+nav ul li a:hover {
+    color: darkred;
+}
+li a {
+    display: block;
+    text-decoration: none;
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    background-color: black;
+    justify-content: space-between;
+    position: relative;
+}
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -6px;
+    top: -5px;
+    cursor: pointer;
+}
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0;
+}
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 0;
+}
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-0.1px, 0);
+}
+.menu-toggle input:checked ~ span:nth-child(3) {
+    opacity: 0;
+    transform: scale(0);
+}
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: blanchedalmond;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 576px) {
+    nav {
+        position: relative;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: black;
+        width: 100%;
+        transform: translateX(100%);
+        transition: all 1s;
+        z-index: -0;
+        display: grid;
+    }
+    nav ul.slide {
+        transform: translateX(0);
+    }
+}
+.atas p {
+    font-size: 1em;
+}
+.atas img {
+    width: 100%;
+    height: 530px;
+    margin-bottom: 10px;
+}
+.atas h1 {
+    position: absolute;
+    margin-left: 30px;
+    color: white;
+    margin-top: 20px;
+    font-style: unset;
+}
+.atas p {
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 70px;
+    color: white;
+    text-align: left;
+    margin-right: 100px;
+    float: left;
+    width: 500px;
+}
+.bawah h1 {
+    text-align: center;
+    text-shadow: 2px 2px 5px red;
+    color: white;
+}
+
+.polaroid {
+    width: 20%;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 10px;
+}
+.container {
+    text-align: center;
+    padding: 10px 20px;
+}
+.container {
+    position: relative;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.overlay {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: darkred;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: 1s ease;
+}
+.container:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+.text {
+    white-space: nowrap;
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.terakhir img {
+    margin-bottom: 20px;
+    width: 100%;
+    height: 600px;
+    margin-bottom: 10px;
+}
+.terakhir h1 {
+    position: absolute;
+    color: white;
+    margin-left: 20px;
+    margin-top: 20px;
+    text-shadow: 2px 2px 5px red;
+}
+#satu {
+    position: absolute;
+    margin-top: 60px;
+    color: white;
+    margin-left: 30px;
+    font-size: 20px;
+}
+#dua {
+    position: absolute;
+    margin-top: 90px;
+    color: white;
+    margin-left: 30px;
+    font-size: 20px;
+}
+#tiga {
+    position: absolute;
+    margin-top: 120px;
+    color: white;
+    margin-left: 30px;
+    font-size: 20px;
+}
+.footer {
+    background-color: black;
+}
+.footer p {
+    text-align: center;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
