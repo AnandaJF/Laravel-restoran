@@ -116,12 +116,13 @@ li a {
     margin-top: 10px;
 }
 div.gallery {
-    border: 1px solid #ccc;
+    border: 3px solid #ccc;
+    width: 313px;
     height: 350px;
 }
 
 div.gallery:hover {
-    border: 1px solid #777;
+    border: 3px solid darkred;
 }
 
 div.gallery img {
@@ -130,8 +131,10 @@ div.gallery img {
 }
 
 div.desc {
-    padding: 15px;
     text-align: center;
+    background-color: black;
+    opacity: 0.7;
+    color: white;
 }
 
 * {
@@ -142,7 +145,6 @@ div.desc {
     padding: 0 6px;
     float: left;
     width: 24.99999%;
-    padding: 10px;
 }
 
 @media only screen and (max-width: 700px) {
@@ -163,6 +165,7 @@ div.desc {
     display: table;
     clear: both;
 }
+
 h1 {
     color: darkred;
     text-align: center;
@@ -171,4 +174,9 @@ h1 {
 .footer p {
     text-align: center;
     color: white;
+    padding: 10px;
+}
+.box {
+    width: 100000px;
+    height: 20000px;
 }

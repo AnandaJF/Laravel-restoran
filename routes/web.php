@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
+use App\Http\Middleware\CekRole;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,7 +41,22 @@ Route::get('/redirects', [HomeController::class,"redirects"]);
 Route::post('/order', [HomeController::class,"order"]);
 
 Route::get('/orders', [AdminController::class,"orders"]);
+
+Route::get('/adminhome', [AdminController::class,"adminhome"]);
+
+Route::get('/logout', [HomeController::class,"logout"]);
+
+Route::get('/remove{id}', [HomeController::class,"logout"]);
  
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('/transaksi', [AdminController::class,"transaksi"]);
+
+Route::get('/detail{id}', [AdminController::class,"detail"])->name('detail');
+
+Route::get('/kasirhome', [AdminController::class,"kasirhome"]);
+
+Route::get('/laporan', [AdminController::class,"laporan"]);
+

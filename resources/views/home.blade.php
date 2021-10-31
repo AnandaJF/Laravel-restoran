@@ -17,10 +17,10 @@
         <ul>
 
 
-            <li><a href="/redirects"> Home </a></li>
+            <li><a href="{{url('/redirects  ')}}"> Home </a></li>
             <li><a href="{{url('/food')}}"> Food </a></li>
             
-            <li style="color:white;">
+            <li style="color:#FFFFE5;">
 
             @auth          
                 
@@ -30,7 +30,7 @@
 
             @guest
 
-            Transaksi
+            <div style="font-size:20px;">Transaksi</div>
 
             @endguest 
 
@@ -43,9 +43,7 @@
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                     <li>
-                        <x-app-layout>
-  
-                        </x-app-layout>
+                    <a href="{{url('/logout')}}"> Log Out </a>
                     </li>
                     @else
                         <li><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a></li>
@@ -90,8 +88,8 @@
         <p id="tiga">3. Jika sudah pesanan anda akan di antar ke meja</p>
         <img src="img/pizza.jpg">
     </div>
-
-    <div class="footer">
+<hr>
+    <div class="footer" style="padding: 10px">
         <p id="email">E-mail : restoran_italia@gmail.com</p>
         <p id="alamat"> Alamat : Jl Pangeran Antasari No.36 Jakarta Selatan, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta (12150)
         </p>
