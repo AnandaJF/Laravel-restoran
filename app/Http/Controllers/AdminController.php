@@ -22,8 +22,6 @@ class AdminController extends Controller
         return view("admin.users",compact("data"));
         }
 
-
-
         public function foodmenu()
         {
         $data = food::all();
@@ -76,9 +74,39 @@ public function orders()
 {
     $data=order::all();
 
-    return view('admin.orders',compact('data'));
+    return view('kasir.orders',compact('data'));
+}
+
+public function adminhome()
+{
+    return view('admin.adminhome');
+}
+
+public function kasirhome()
+{
+    return view('kasirhome');
+}
+
+public function laporan()
+{
+    return view('admin.laporan');
+}
+
+public function transaksi()
+{
+    return view('kasir.transaksi');
+}
+
+public function detail($id)
+{ 
+    $data = Order::where('id', $id)
+        ->first();
+
+    return view('kasir.detail', [
+        'data' => $data
+    ]);
+}
+
 }
 
 
-
-}

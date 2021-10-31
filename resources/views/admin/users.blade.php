@@ -14,26 +14,28 @@
 
     @include("admin.navbar");
 
-    <div style="position: relative; top: 60px; right: -150px">
-    <table bgcolor="grey" border="3px">
+    <div  class="table">
+    
+    <table  cellpadding="10" border="1" style="margin-left:100px; background-color: white;">
 
-    <tr>
+    <tr align="center">
         <th style="padding: 30px;">Name</th>
         <th style="padding: 30px;">Email</th>
-        <th style="padding: 30px;">Action</th>
+        <th style="padding: 30px;">Status</th>
     </tr>
 
 
 @foreach($data as $data)
 <tr align="center">
-    <td>{{$data->name}}</td>
-    <td>{{$data->email}}</td>
+    <td style="padding: 30px;">{{$data->name}}</td>
+    <td style="padding: 30px;">{{$data->email}}</td>
 
-    @if($data->usertype=="1")
-    <td><a href="{{url('/deleteuser', $data->id)}}">Delete</a></td>
+    @if($data->role=="admin")
+    <td><a>Manajer</a></td>
+    @elseif($data->role=="kasir")
+    <td><a>Kasir</a></td>
     @else
-    <td><a>Not Allowed</a></td>
-
+    <td><a>Pelanggan</a></td>
 @endif
 
 </tr>
